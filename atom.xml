@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Litten的博客</title>
+  <icon>https://www.gravatar.com/avatar/1b1060c5a2544f4ae03788a00f7c2c93</icon>
+  <subtitle>胆小认生，不易相处</subtitle>
+  <link href="http://example.com/atom.xml" rel="self"/>
+  
+  <link href="http://example.com/"/>
+  <updated>2022-04-11T10:06:04.746Z</updated>
+  <id>http://example.com/</id>
+  
+  <author>
+    <name>Litten</name>
+    <email>litten225@qq.com</email>
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>redis各种数据结构使用</title>
+    <link href="http://example.com/2022/04/07/%E5%8D%9A%E5%AE%A2%E5%90%8D%E5%AD%97/"/>
+    <id>http://example.com/2022/04/07/%E5%8D%9A%E5%AE%A2%E5%90%8D%E5%AD%97/</id>
+    <published>2022-04-07T08:26:28.000Z</published>
+    <updated>2022-04-11T10:06:04.746Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="redis各种数据结构使用"><a href="#redis各种数据结构使用" class="headerlink" title="redis各种数据结构使用"></a>redis各种数据结构使用</h2><p>[toc]</p><h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><ul><li>最大值不能超过512m<h4 id="内部编码"><a href="#内部编码" class="headerlink" title="内部编码"></a>内部编码</h4></li><li>1 int：8个字节的长整形</li><li>2 embstr:小于等于39个字节的字符串</li><li>3 raw：小雨等于39个字节的字符串<blockquote><p>会根据设置的值进行转换</p></blockquote><h4 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#set key value [ex seconds][px milliseconds]</span><br><span class="line">set hello world</span><br><span class="line"></span><br><span class="line"># 获取值</span><br><span class="line"># get key</span><br></pre></td></tr></table></figure><h4 id="批量设置值"><a href="#批量设置值" class="headerlink" title="批量设置值"></a>批量设置值</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#mset key value kay value</span><br><span class="line">mset a 1 b 1 c 1</span><br><span class="line"># 由于redis集群的各个点是独立的。所以这样设置在集群环境下会出错，可以设置hash tag redis来进行存储，如果hashtag相同</span><br><span class="line">就会被分配到同一个集群点上,读取的时候也要加上hashtag,否者就无法读取到值,hashtag的意思是只有&#123;&#125;中的内容会参与到hash运算中去</span><br><span class="line">mset &#123;1&#125;a 1 &#123;1&#125;b 1 &#123;1&#125;c 1 </span><br></pre></td></tr></table></figure><h4 id="计数"><a href="#计数" class="headerlink" title="计数"></a>计数</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">incr key</span><br></pre></td></tr></table></figure>用于自增操作：返回有三种情况</li><li>值不是整数，返回错误</li><li>值是是整数，返回自增后的结果</li><li>key不存在，按照值为0自增，返回结果为1<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">EXISTS key</span><br><span class="line">-&gt; Redirected to slot [12539] located at 172.16.37.112:6383</span><br><span class="line">(integer) 0</span><br><span class="line"></span><br><span class="line">172.16.37.112:6383&gt; incr key</span><br><span class="line">(integer) 1</span><br></pre></td></tr></table></figure><blockquote><p>许多系统的CAS（乐观锁）来实现计数功能，但是由于多线程的存在会有一定的问题，可以用这个来</p></blockquote></li></ul><h4 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h4><ol><li>缓存，可以作为缓存，比方说用户信息，可以redis里取，取不到的话再去数据库去拿，然后存储在redis里，这几redis的过期时间是1小时，更新缓存可以是异步的（可以利用消息中间件或者多线程技术进行处理），这样耦合性会降低。</li><li>计数功能，可以利用 incr key 来进行技术，由于redis是单线程的，是不会导致重复，比方说订单号。</li><li>共享session<h3 id="hash"><a href="#hash" class="headerlink" title="hash"></a>hash</h3><h4 id="使用命令"><a href="#使用命令" class="headerlink" title="使用命令"></a>使用命令</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hset hashtest name tom #存储值</span><br><span class="line">hget hashtest se # 获取某个属性的值</span><br><span class="line">hdel hashtest name # 删除一个属性的值</span><br><span class="line">hlen key # 获取field个数</span><br></pre></td></tr></table></figure><blockquote><p>hgetall的时候，如果hash元素个数比较多，会存在阻塞redis的可能如果是指部分获取，可以使用hmget获取，如果一定要全部<br>那么可以使用hscan</p></blockquote><h4 id="内部编码-1"><a href="#内部编码-1" class="headerlink" title="内部编码"></a>内部编码</h4></li></ol><ul><li>ziplist（压缩列表）：当哈希类型元素个数小于hash-max-ziplist-entries配置（默认512个）同时所有值都小于hash-max-ziplist-value配置（默认64字节）时，Redis会使用ziplist作为哈希的内部实现，ziplist使用更加紧凑的<br>结构实现多个元素的连续存储，所以在节省内存方面比hashtable更加优秀。</li><li>hashtable（哈希表）：当哈希类型无法满足ziplist的条件时，Redis会使用hashtable作为哈希的内部实现，因为此时ziplist的读写效率会下降，而hashtable的读写时间复杂度为O（1）。<h4 id="使用场景-1"><a href="#使用场景-1" class="headerlink" title="使用场景"></a>使用场景</h4></li><li>存储数据信息，例如缓存用户信息</li><li>存储用户信息三个方案<ul><li>原生字符串类型：每个属性一个键。<ul><li>优点：简单直观，每个属性都支持更新操作</li><li>缺点：内聚性查，占用key过多。占用内存大。</li></ul></li><li>序列化字符串，<ul><li>优点：简化编程，编程可以直接反序列化。</li><li>缺点：序列化和反序列化有一定的开销，同时每次更新属性都要重新序列化</li></ul></li><li>hash<ul><li>优点:简单只管，介绍内存使用</li><li>要控制hash在ziplist和hashtable之间的转换，hashtable会消耗更多的内存<h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><h4 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h4></li></ul></li></ul></li><li>一个有序的列表，</li><li>元素是可以重复的</li><li>一共可以存储2的32次方-1个元素，</li><li>可以从列表两端进行push，和pop操作，</li><li>可以获得范围的内的元素，或者制定下表的元素<h4 id="相关命令"><a href="#相关命令" class="headerlink" title="相关命令"></a>相关命令</h4><img src="evernotecid://92FEB8E2-73C5-4EB7-8DD5-2747729FC1D1/appyinxiangcom/28202692/ENResource/p2720" alt="91bff3aa3ffb0db3cd757465c895e982.png"></li></ul> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rpush key value # 从右边插入</span><br><span class="line">blpop # 可以阻塞线程，如果有别的客户端往这个队列里放数据，那么pop就会提取到元素</span><br></pre></td></tr></table></figure><h4 id="内部编码-2"><a href="#内部编码-2" class="headerlink" title="内部编码"></a>内部编码</h4><ul><li>·ziplist（压缩列表）：当列表的元素个数小于list-max-ziplist-entries配置<br>（默认512个），同时列表中每个元素的值都小于list-max-ziplist-value配置时<br>（默认64字节），Redis会选用ziplist来作为列表的内部实现来减少内存的使<br>用。</li><li>·linkedlist（链表）：当列表类型无法满足ziplist的条件时，Redis会使用<br>linkedlist作为列表的内部实现。<h6 id="使用场景-2"><a href="#使用场景-2" class="headerlink" title="使用场景"></a>使用场景</h6></li><li>消息队列，可以使用blpop(头部开始弹出)/brpop(尾部开始弹出)命令来抢列表尾部或者头部的元素来实现订阅的功能呢，多个客户端保证了消息的复杂均衡和高可用性</li><li>文章列表，每个用户列表。</li><li>其他用途：<br>lpush+lpop=Stack（栈）<br>lpush+rpop=Queue（队列）<br>lpsh+ltrim=Capped Collection（有限集合）<br>lpush+brpop=Message Queue（消息队列）<h3 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h3><h4 id="说明-1"><a href="#说明-1" class="headerlink" title="说明"></a>说明</h4>用来保存多个元素，但是不允许有空，集合时无序的无法通过下表获得<h4 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h4></li><li>添加元素:sadd key  a b c </li><li>删除元素:srem key a</li><li>计算元素个数 scard key</li><li>判断元素是否在集合中 sismember key a</li><li>随机从集合返回指定个数的元素 srandmember key 2(不写个数默认为1)</li><li>从集合中随机弹出元素,然后从集合中删除该元素，spop key</li><li>获取所有元素 smembers myset</li><li>两个集合的交集 sinter key key2</li><li>两个集合的并集 suinon key key2</li><li>两个集合的差集 sdiff key key2 key3显示key中的没有存在于key2和key3<br>例如<br>key 1 2 3<br>key2 2<br>key3 3<br>最后结果为1<br><img src="evernotecid://92FEB8E2-73C5-4EB7-8DD5-2747729FC1D1/appyinxiangcom/28202692/ENResource/p2722" alt="6ef94ddd4470aebb2dd2b4825c8ed7be.png"></li></ul><h4 id="内部编码-3"><a href="#内部编码-3" class="headerlink" title="内部编码"></a>内部编码</h4><ul><li>intset（整数集合）：当集合中的元素都是整数且元素个数小于set-max<br>intset-entries配置（默认512个）时，Redis会选用intset来作为集合的内部实<br>现，从而减少内存的使用。</li><li>hashtable（哈希表）：当集合类型无法满足intset的条件时，Redis会使<br>用hashtable作为集合的内部实现。<h4 id="使用场景-3"><a href="#使用场景-3" class="headerlink" title="使用场景"></a>使用场景</h4></li><li>给用户添加标签，可以给一个用户添加多个标签，放入标签的过程应该放入到一个事务中，可以用sinter来得到交集，而取的不同用户的相同标签。<br>·sadd=Tagging（标签）<blockquote><p>spop/srandmember=Random item（生成随机数，比如抽奖）<br>srandmember和spop都是随机从集合选出元素，两者不同的是spop命令<br>执行后，元素会从集合中删除，而srandmember不会。<br>·sadd+sinter=Social Graph（社交需求）</p></blockquote></li></ul><h3 id="有序集合"><a href="#有序集合" class="headerlink" title="有序集合"></a>有序集合</h3><h4 id="说明-2"><a href="#说明-2" class="headerlink" title="说明"></a>说明</h4><p>有序集合中的元素可以排序。但是它和列表使用索引下标作为排序依据不同的是，它给每个元素设置一个分数（score）作为排序的依据。</p><h4 id="使用命令-1"><a href="#使用命令-1" class="headerlink" title="使用命令"></a>使用命令</h4><ul><li>增加元素 zadd user:ranking 251 tom</li><li>计算成员个数 zcard key<h4 id="内部编码-4"><a href="#内部编码-4" class="headerlink" title="内部编码"></a>内部编码</h4>有序集合类型的内部编码有两种：<br>·ziplist（压缩列表）：当有序集合的元素个数小于zset-max-ziplistentries配置（默认128个），同时每个元素的值都小于zsetmax-ziplist-value配置（默认64字节）时，Redis会用ziplist来作为有序集合的内部实现，ziplist可以有效减少内存的使用。<br>·skiplist（跳跃表）：当ziplist条件不满足时，有序集合会使用skiplist作<br>为内部实现，因为此时ziplist的读写效率会下降。<h4 id="使用场景-4"><a href="#使用场景-4" class="headerlink" title="使用场景"></a>使用场景</h4>1 增加用户赞数<br>2 取消用户赞数<br>3 展示用户赞数<br>4 展示用户信息以及分数</li></ul><h3 id="list的区分"><a href="#list的区分" class="headerlink" title="list的区分"></a>list的区分</h3><p><img src="evernotecid://92FEB8E2-73C5-4EB7-8DD5-2747729FC1D1/appyinxiangcom/28202692/ENResource/p2723" alt="560bc1f950f33c93e7e64c9334271723.png"></p><h3 id="Bitmaps"><a href="#Bitmaps" class="headerlink" title="Bitmaps"></a>Bitmaps</h3><h4 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h4><p>bitmaps不是一种真实的数据结构，而是String类型上一组面向bit操作的集合，由于strings是二进制安全的blod,并且他们的最大长度是512m，所以bitmaps能最大设置2^32个不同的bit.</p><h4 id="命令-1"><a href="#命令-1" class="headerlink" title="命令"></a>命令</h4><p>SETBIT user:1 0 1 ## 设置某一个key上的某一位的值<br>GETBIT user:1 0 #获取摸一个key上的某一位的值<br>BITCOUNT user:1 #获取某一个key的1的位数<br>BITOP AND destkey key key1 #对一个或多个 key 求逻辑并，并将结果保存到 destkey<br>BITOP OR destkey key # 对一个或多个 key 求逻辑或，并将结果保存到 - destkey </p><h4 id="使用场景-5"><a href="#使用场景-5" class="headerlink" title="使用场景"></a>使用场景</h4><p> a.各种实时分析<br>        例如访问网站的用户的最长连续时间，每次用户访问网站时通过SETBIT命令设置bit为1，可以简单的用当前时间减去初始时间并除以3600*24当做这个bit的位置。<br>    b.存储于对象id关联的节省空间并且高性能的布尔信息</p><h3 id="HyperLogLogs"><a href="#HyperLogLogs" class="headerlink" title="HyperLogLogs"></a>HyperLogLogs</h3><h4 id="说明-3"><a href="#说明-3" class="headerlink" title="说明"></a>说明</h4><p>比如数据集 {1, 3, 5, 7, 5, 7, 8}， 那么这个数据集的基数集就是 {1, 3, 5 ,7, 8}, 基数(不重复元素的个数)为5。<br>基数估计就是在误差可接受的范围内，快速计算基数。有误差小于1%</p><h4 id="相关命令-1"><a href="#相关命令-1" class="headerlink" title="相关命令"></a>相关命令</h4><ul><li>pfadd user1:views a b c d e #加入基数</li><li>pfcount user1:views # 计算基数</li><li>pfcount user1:views user2:views # 两个key中的不重复元素个数为8</li><li>pfmerge user:views user1:views user2:views # 求并集<h4 id="使用场景-6"><a href="#使用场景-6" class="headerlink" title="使用场景"></a>使用场景</h4>hyperloglogs的优点是，在输入元素的数量或者体积非常非常大时，计算基数所需的空间总是固定 的、并且是很小的。<br>在 Redis 里面，每个 HyperLogLog 键只需要花费 12 KB 内存，就可以计算接近 2^64 个不同元素的基 数。这和计算基数时，元素越多耗费内存就越多的集合形成鲜明对比。<br>缺点：因为 HyperLogLog 只会根据输入元素来计算基数，而不会储存输入元素本身，所以 HyperLogLog 不能像集合那样，返回输入的各个元素。<h3 id="GEO"><a href="#GEO" class="headerlink" title="GEO"></a>GEO</h3><h4 id="说明-4"><a href="#说明-4" class="headerlink" title="说明"></a>说明</h4>Redis GEO 主要用于存储地理位置信息，并对存储的信息进行操作，该功能在 Redis 3.2 版本新增。<h4 id="命令-2"><a href="#命令-2" class="headerlink" title="命令"></a>命令</h4>GEOADD Sicily 13.361389 38.115556 “Palermo” 15.087269 37.502669 “Catania” 设置地理坐标<br>GEODIST Sicily Palermo Catania # 得到两点之间距离<br>georadius # 根据用户给定的经纬度坐标来获取指定范围内的地理位置的集合</li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;redis各种数据结构使用&quot;&gt;&lt;a href=&quot;#redis各种数据结构使用&quot; class=&quot;headerlink&quot; title=&quot;redis各种数据结构使用&quot;&gt;&lt;/a&gt;redis各种数据结构使用&lt;/h2&gt;&lt;p&gt;[toc]&lt;/p&gt;
+&lt;h3 id=&quot;字符串&quot;&gt;&lt;a </summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>f</title>
+    <link href="http://example.com/2021/11/26/f/"/>
+    <id>http://example.com/2021/11/26/f/</id>
+    <published>2021-11-26T06:53:00.000Z</published>
+    <updated>2022-04-11T09:32:51.616Z</updated>
+    
+    <content type="html"><![CDATA[<p>sdfsdfsd<br>sdfsdfdsfsadsadsadsa sad sadsdasdsadasd<br>sdafsafasf<br>sadfdsdfdfdddddddddddddddddddddddddddddsfsdafasfasdf</p><p>史蒂芬递四方速递</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;sdfsdfsd&lt;br&gt;sdfsdfdsfsadsadsadsa sad sadsdasdsadasd&lt;br&gt;sdafsafasf&lt;br&gt;sadfdsdfdfdddddddddddddddddddddddddddddsfsdafasfasdf&lt;/p&gt;
+&lt;p&gt;史蒂芬递四方速递</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>b</title>
+    <link href="http://example.com/2021/11/26/b/"/>
+    <id>http://example.com/2021/11/26/b/</id>
+    <published>2021-11-26T06:49:07.000Z</published>
+    <updated>2021-11-26T06:49:07.000Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>sdfsdfdsfsdf</title>
+    <link href="http://example.com/2021/11/26/sdfsdfdsfsdf/"/>
+    <id>http://example.com/2021/11/26/sdfsdfdsfsdf/</id>
+    <published>2021-11-26T06:31:40.000Z</published>
+    <updated>2021-11-26T06:31:43.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>sdfsdfsdfdsf<br>sdfsdfsdf</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;sdfsdfsdfdsf&lt;br&gt;sdfsdfsdf&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>My New Post</title>
+    <link href="http://example.com/2021/11/26/My-New-Post/"/>
+    <id>http://example.com/2021/11/26/My-New-Post/</id>
+    <published>2021-11-26T05:15:56.000Z</published>
+    <updated>2021-11-26T06:30:42.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="nihao"><a href="#nihao" class="headerlink" title="nihao"></a>nihao</h2><h4 id="nihao-1"><a href="#nihao-1" class="headerlink" title="nihao"></a>nihao</h4>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;nihao&quot;&gt;&lt;a href=&quot;#nihao&quot; class=&quot;headerlink&quot; title=&quot;nihao&quot;&gt;&lt;/a&gt;nihao&lt;/h2&gt;&lt;h4 id=&quot;nihao-1&quot;&gt;&lt;a href=&quot;#nihao-1&quot; class=&quot;headerlink&quot; title=</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://example.com/2021/11/26/hello-world/"/>
+    <id>http://example.com/2021/11/26/hello-world/</id>
+    <published>2021-11-26T05:10:38.000Z</published>
+    <updated>2021-11-26T05:10:38.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+</feed>
