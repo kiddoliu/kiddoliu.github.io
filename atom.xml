@@ -6,7 +6,7 @@
   <link href="http://www.example.com/atom.xml" rel="self"/>
   
   <link href="http://www.example.com/"/>
-  <updated>2022-11-02T11:24:24.798Z</updated>
+  <updated>2022-11-02T14:43:38.098Z</updated>
   <id>http://www.example.com/</id>
   
   <author>
@@ -15,6 +15,52 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ddd</title>
+    <link href="http://www.example.com/2022/11/02/ddd/"/>
+    <id>http://www.example.com/2022/11/02/ddd/</id>
+    <published>2022-11-02T14:28:47.000Z</published>
+    <updated>2022-11-02T14:43:38.098Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">abc</span>&#123;</span><br><span class="line">System.out.print</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><img src="/.com//ddd/ddd.jpg" alt="img"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>blog-name</title>
+    <link href="http://www.example.com/2022/11/02/blog-name/"/>
+    <id>http://www.example.com/2022/11/02/blog-name/</id>
+    <published>2022-11-02T14:27:00.000Z</published>
+    <updated>2022-11-02T14:27:00.776Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>categories</title>
+    <link href="http://www.example.com/2022/11/02/categories/"/>
+    <id>http://www.example.com/2022/11/02/categories/</id>
+    <published>2022-11-02T14:11:08.000Z</published>
+    <updated>2022-11-02T14:11:08.488Z</updated>
+    
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>cde</title>
@@ -41,11 +87,15 @@
     <link href="http://www.example.com/2022/11/02/abc/"/>
     <id>http://www.example.com/2022/11/02/abc/</id>
     <published>2022-11-02T11:04:01.000Z</published>
-    <updated>2022-11-02T11:04:01.552Z</updated>
+    <updated>2022-11-02T14:06:18.898Z</updated>
     
     
     
     
+    <category term="学习" scheme="http://www.example.com/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="技术" scheme="http://www.example.com/tags/%E6%8A%80%E6%9C%AF/"/>
     
   </entry>
   

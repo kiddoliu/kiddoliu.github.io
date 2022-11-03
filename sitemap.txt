@@ -1,4 +1,12 @@
-http://www.example.com/2022/11/02/cde/
+http://www.example.com/2022/11/02/ddd/
+http://www.example.com/2022/11/02/blog-name/
+http://www.example.com/imgdemo/index.html
+http://www.example.com/categories/index.html
+http://www.example.com/2022/11/02/categories/
+http://www.example.com/tags/index.html
 http://www.example.com/2022/11/02/abc/
+http://www.example.com/2022/11/02/cde/
 http://www.example.com/2022/11/02/hello-world/
 http://www.example.com/
+http://www.example.com/tags/%E6%8A%80%E6%9C%AF/
+http://www.example.com/categories/%E5%AD%A6%E4%B9%A0/
