@@ -6,7 +6,7 @@
   <link href="http://www.example.com/atom.xml" rel="self"/>
   
   <link href="http://www.example.com/"/>
-  <updated>2022-11-02T14:43:38.098Z</updated>
+  <updated>2022-11-02T14:49:24.901Z</updated>
   <id>http://www.example.com/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://www.example.com/2022/11/02/ddd/"/>
     <id>http://www.example.com/2022/11/02/ddd/</id>
     <published>2022-11-02T14:28:47.000Z</published>
-    <updated>2022-11-02T14:43:38.098Z</updated>
+    <updated>2022-11-02T14:49:24.901Z</updated>
     
-    <content type="html"><![CDATA[<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">abc</span>&#123;</span><br><span class="line">System.out.print</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><img src="/.com//ddd/ddd.jpg" alt="img"></p>]]></content>
+    <content type="html"><![CDATA[<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">abc</span>&#123;</span><br><span class="line">System.out.print</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><img src="/2022/11/02/ddd/ddd.jpg" alt="img"></p>]]></content>
     
     
       
