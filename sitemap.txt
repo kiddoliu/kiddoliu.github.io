@@ -1,10 +1,14 @@
+http://www.example.com/repository/index.html
+http://www.example.com/links/index.html
+http://www.example.com/categories/index.html
+http://www.example.com/tags/index.html
+http://www.example.com/about/index.html
+http://www.example.com/books/index.html
+http://www.example.com/2022/11/02/abc/
 http://www.example.com/2022/11/02/ddd/
 http://www.example.com/2022/11/02/blog-name/
 http://www.example.com/imgdemo/index.html
-http://www.example.com/categories/index.html
 http://www.example.com/2022/11/02/categories/
-http://www.example.com/tags/index.html
-http://www.example.com/2022/11/02/abc/
 http://www.example.com/2022/11/02/cde/
 http://www.example.com/2022/11/02/hello-world/
 http://www.example.com/
