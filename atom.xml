@@ -6,7 +6,7 @@
   <link href="http://www.example.com/atom.xml" rel="self"/>
   
   <link href="http://www.example.com/"/>
-  <updated>2022-11-02T14:49:24.901Z</updated>
+  <updated>2022-11-26T03:59:06.242Z</updated>
   <id>http://www.example.com/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>vim文本对象</title>
+    <link href="http://www.example.com/2022/11/26/vim%E6%96%87%E6%9C%AC%E5%AF%B9%E8%B1%A1/"/>
+    <id>http://www.example.com/2022/11/26/vim%E6%96%87%E6%9C%AC%E5%AF%B9%E8%B1%A1/</id>
+    <published>2022-11-26T03:09:15.000Z</published>
+    <updated>2022-11-26T03:59:06.242Z</updated>
+    
+    <content type="html"><![CDATA[<div class="toc"><!-- toc --><ul><li><a href="#shi-me-shi-vim-de-wen-ben-dui-xiang">什么是vim的文本对象</a></li><li><a href="#wen-ben-dui-xiang-du-bao-gua-na-xie-du-shi-shi-me">文本对象都包括那些，都是什么</a></li></ul><!-- tocstop --></div><h3><span id="shi-me-shi-vim-de-wen-ben-dui-xiang">什么是vim的文本对象</span><a href="#shi-me-shi-vim-de-wen-ben-dui-xiang" class="header-anchor">#</a></h3><p>  vim文本对象就是你要操作的实体，这个实体可以是一个单词，一个段落，一个程序编码的参数，甚至是整个文章。</p><p>例如：w 在vim中代表一个单词，例如 daw d：这里是指delete, a:是指arround, w:这里指单词<br>daw，就是删除当前光标所在字母的单词，a：意思是删除这个单词外加它后边的一个空格<br>This is a big building;<br>如果光标位于big的b上，big[空格]   会被删除<br>后会变成：<br>This is a building;</p><h3><span id="wen-ben-dui-xiang-du-bao-gua-na-xie-du-shi-shi-me">文本对象都包括那些，都是什么</span><a href="#wen-ben-dui-xiang-du-bao-gua-na-xie-du-shi-shi-me" class="header-anchor">#</a></h3><table><thead><tr><th>文本对象</th><th>具体含义</th></tr></thead><tbody><tr><td>w&#x2F;W</td><td>word&#x2F;Word:代表一个单词，小写代表单词的分割是特殊符号，大写单词的分隔符是空格例如：cde#abc abc 这里在小写w开来就是两个w，我们把光标定位到c上写一个【daw】 那么只能删除cde,如果我们想删除cde#abc 的时候就要输入【daW】</td></tr><tr><td>t</td><td>tag:整个标签html标签</td></tr><tr><td>s</td><td>sentence:代表一行</td></tr><tr><td>p</td><td>paragraph 代表一个段落，所谓段落就是有空行间隔就叫做一个段落</td></tr><tr><td>e</td><td>entire 代表文章全部,vim默认是没有的，这里需要安装：textobj-entire插件</td></tr><tr><td>a</td><td>argument:代表一个方法的参数，这里需要安装 argtextobj 插件</td></tr></tbody></table>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;div class=&quot;toc&quot;&gt;
+
+&lt;!-- toc --&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#shi-me-shi-vim-de-wen-ben-dui-xiang&quot;&gt;什么是vim的文本对象&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#wen-ben-dui-xian</summary>
+      
+    
+    
+    
+    <category term="学习" scheme="http://www.example.com/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="技术" scheme="http://www.example.com/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="vi" scheme="http://www.example.com/tags/vi/"/>
+    
+  </entry>
   
   <entry>
     <title>ddd</title>
@@ -69,12 +101,12 @@
     <published>2022-11-02T11:07:29.000Z</published>
     <updated>2022-11-02T11:24:24.798Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="你好sadasd-sadsad"><a href="#你好sadasd-sadsad" class="headerlink" title="你好sadasd sadsad"></a>你好sadasd sadsad</h3>]]></content>
+    <content type="html"><![CDATA[<h3><span id="ni-hao-sadasd-sadsad">你好sadasd sadsad</span><a href="#ni-hao-sadasd-sadsad" class="header-anchor">#</a></h3>]]></content>
     
     
       
       
-    <summary type="html">&lt;h3 id=&quot;你好sadasd-sadsad&quot;&gt;&lt;a href=&quot;#你好sadasd-sadsad&quot; class=&quot;headerlink&quot; title=&quot;你好sadasd sadsad&quot;&gt;&lt;/a&gt;你好sadasd sadsad&lt;/h3&gt;</summary>
+    <summary type="html">&lt;h3&gt;&lt;span id=&quot;ni-hao-sadasd-sadsad&quot;&gt;你好sadasd sadsad&lt;/span&gt;&lt;a href=&quot;#ni-hao-sadasd-sadsad&quot; class=&quot;header-anchor&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;</summary>
       
     
     
@@ -87,15 +119,26 @@
     <link href="http://www.example.com/2022/11/02/abc/"/>
     <id>http://www.example.com/2022/11/02/abc/</id>
     <published>2022-11-02T11:04:01.000Z</published>
-    <updated>2022-11-08T09:54:50.916Z</updated>
+    <updated>2022-11-08T14:04:51.254Z</updated>
     
-    <content type="html"><![CDATA[<p>[TOC]</p><h2 id="abc"><a href="#abc" class="headerlink" title="abc"></a>abc</h2><h3 id="dddf"><a href="#dddf" class="headerlink" title="dddf"></a>dddf</h3>]]></content>
+    <content type="html"><![CDATA[<div class="toc"><!-- toc --><ul><li><a href="#abc">abc</a><ul><li><a href="#dddf">dddf</a></li></ul></li></ul><!-- tocstop --></div>## abc### dddf##### sdfsdf]]></content>
     
     
       
       
-    <summary type="html">&lt;p&gt;[TOC]&lt;/p&gt;
-&lt;h2 id=&quot;abc&quot;&gt;&lt;a href=&quot;#abc&quot; class=&quot;headerlink&quot; title=&quot;abc&quot;&gt;&lt;/a&gt;abc&lt;/h2&gt;&lt;h3 id=&quot;dddf&quot;&gt;&lt;a href=&quot;#dddf&quot; class=&quot;headerlink&quot; title=&quot;</summary>
+    <summary type="html">&lt;div class=&quot;toc&quot;&gt;
+
+&lt;!-- toc --&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#abc&quot;&gt;abc&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#dddf&quot;&gt;dddf&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- tocstop --&gt;
+
+&lt;</summary>
       
     
     
@@ -114,7 +157,7 @@
     <published>2022-11-02T10:51:38.993Z</published>
     <updated>2022-11-02T10:51:38.993Z</updated>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2><span id="quick-start">Quick Start</span><a href="#quick-start" class="header-anchor">#</a></h2><h3><span id="create-a-new-post">Create a new post</span><a href="#create-a-new-post" class="header-anchor">#</a></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3><span id="run-server">Run server</span><a href="#run-server" class="header-anchor">#</a></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3><span id="generate-static-files">Generate static files</span><a href="#generate-static-files" class="header-anchor">#</a></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3><span id="deploy-to-remote-sites">Deploy to remote sites</span><a href="#deploy-to-remote-sites" class="header-anchor">#</a></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
     
     
       
