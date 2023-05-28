@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://www.example.com/2022/11/26/vim%E6%96%87%E6%9C%AC%E5%AF%B9%E8%B1%A1/</loc>
+    <loc>http://kiddoliu.github.io/about/index.html</loc>
     
     <lastmod>2022-11-26</lastmod>
     
@@ -11,7 +11,16 @@
   </url>
   
   <url>
-    <loc>http://www.example.com/2022/11/02/abc/</loc>
+    <loc>http://kiddoliu.github.io/2022/11/26/vim%E6%96%87%E6%9C%AC%E5%AF%B9%E8%B1%A1/</loc>
+    
+    <lastmod>2022-11-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://kiddoliu.github.io/2022/11/02/abc/</loc>
     
     <lastmod>2022-11-08</lastmod>
     
@@ -20,7 +29,7 @@
   </url>
   
   <url>
-    <loc>http://www.example.com/about/index.html</loc>
+    <loc>http://kiddoliu.github.io/repository/index.html</loc>
     
     <lastmod>2022-11-08</lastmod>
     
@@ -29,7 +38,7 @@
   </url>
   
   <url>
-    <loc>http://www.example.com/repository/index.html</loc>
+    <loc>http://kiddoliu.github.io/links/index.html</loc>
     
     <lastmod>2022-11-08</lastmod>
     
@@ -38,7 +47,7 @@
   </url>
   
   <url>
-    <loc>http://www.example.com/links/index.html</loc>
+    <loc>http://kiddoliu.github.io/categories/index.html</loc>
     
     <lastmod>2022-11-08</lastmod>
     
@@ -47,7 +56,7 @@
   </url>
   
   <url>
-    <loc>http://www.example.com/categories/index.html</loc>
+    <loc>http://kiddoliu.github.io/tags/index.html</loc>
     
     <lastmod>2022-11-08</lastmod>
     
@@ -56,7 +65,7 @@
   </url>
   
   <url>
-    <loc>http://www.example.com/tags/index.html</loc>
+    <loc>http://kiddoliu.github.io/books/index.html</loc>
     
     <lastmod>2022-11-08</lastmod>
     
@@ -65,16 +74,7 @@
   </url>
   
   <url>
-    <loc>http://www.example.com/books/index.html</loc>
-    
-    <lastmod>2022-11-08</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.example.com/2022/11/02/ddd/</loc>
+    <loc>http://kiddoliu.github.io/2022/11/02/ddd/</loc>
     
     <lastmod>2022-11-02</lastmod>
     
@@ -83,7 +83,7 @@
   </url>
   
   <url>
-    <loc>http://www.example.com/2022/11/02/blog-name/</loc>
+    <loc>http://kiddoliu.github.io/2022/11/02/blog-name/</loc>
     
     <lastmod>2022-11-02</lastmod>
     
@@ -92,7 +92,7 @@
   </url>
   
   <url>
-    <loc>http://www.example.com/imgdemo/index.html</loc>
+    <loc>http://kiddoliu.github.io/imgdemo/index.html</loc>
     
     <lastmod>2022-11-02</lastmod>
     
@@ -101,7 +101,7 @@
   </url>
   
   <url>
-    <loc>http://www.example.com/2022/11/02/categories/</loc>
+    <loc>http://kiddoliu.github.io/2022/11/02/categories/</loc>
     
     <lastmod>2022-11-02</lastmod>
     
@@ -110,7 +110,7 @@
   </url>
   
   <url>
-    <loc>http://www.example.com/2022/11/02/cde/</loc>
+    <loc>http://kiddoliu.github.io/2022/11/02/cde/</loc>
     
     <lastmod>2022-11-02</lastmod>
     
@@ -119,7 +119,7 @@
   </url>
   
   <url>
-    <loc>http://www.example.com/2022/11/02/hello-world/</loc>
+    <loc>http://kiddoliu.github.io/2022/11/02/hello-world/</loc>
     
     <lastmod>2022-11-02</lastmod>
     
@@ -129,7 +129,7 @@
   
 
   <url>
-    <loc>http://www.example.com/</loc>
+    <loc>http://kiddoliu.github.io/</loc>
     <lastmod>2022-11-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
@@ -137,14 +137,14 @@
 
   
   <url>
-    <loc>http://www.example.com/tags/%E6%8A%80%E6%9C%AF/</loc>
+    <loc>http://kiddoliu.github.io/tags/%E6%8A%80%E6%9C%AF/</loc>
     <lastmod>2022-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://www.example.com/tags/vi/</loc>
+    <loc>http://kiddoliu.github.io/tags/vi/</loc>
     <lastmod>2022-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -153,7 +153,7 @@
 
   
   <url>
-    <loc>http://www.example.com/categories/%E5%AD%A6%E4%B9%A0/</loc>
+    <loc>http://kiddoliu.github.io/categories/%E5%AD%A6%E4%B9%A0/</loc>
     <lastmod>2022-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

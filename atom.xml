@@ -3,11 +3,11 @@
   <title>kiddoliu&#39;s</title>
   
   
-  <link href="http://www.example.com/atom.xml" rel="self"/>
+  <link href="http://kiddoliu.github.io/atom.xml" rel="self"/>
   
-  <link href="http://www.example.com/"/>
+  <link href="http://kiddoliu.github.io/"/>
   <updated>2022-11-26T04:08:55.762Z</updated>
-  <id>http://www.example.com/</id>
+  <id>http://kiddoliu.github.io/</id>
   
   <author>
     <name>kiddoliu</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>vim文本对象</title>
-    <link href="http://www.example.com/2022/11/26/vim%E6%96%87%E6%9C%AC%E5%AF%B9%E8%B1%A1/"/>
-    <id>http://www.example.com/2022/11/26/vim%E6%96%87%E6%9C%AC%E5%AF%B9%E8%B1%A1/</id>
+    <link href="http://kiddoliu.github.io/2022/11/26/vim%E6%96%87%E6%9C%AC%E5%AF%B9%E8%B1%A1/"/>
+    <id>http://kiddoliu.github.io/2022/11/26/vim%E6%96%87%E6%9C%AC%E5%AF%B9%E8%B1%A1/</id>
     <published>2022-11-26T03:09:15.000Z</published>
     <updated>2022-11-26T04:08:55.762Z</updated>
     
@@ -39,19 +39,19 @@
     
     
     
-    <category term="学习" scheme="http://www.example.com/categories/%E5%AD%A6%E4%B9%A0/"/>
+    <category term="学习" scheme="http://kiddoliu.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
-    <category term="技术" scheme="http://www.example.com/tags/%E6%8A%80%E6%9C%AF/"/>
+    <category term="技术" scheme="http://kiddoliu.github.io/tags/%E6%8A%80%E6%9C%AF/"/>
     
-    <category term="vi" scheme="http://www.example.com/tags/vi/"/>
+    <category term="vi" scheme="http://kiddoliu.github.io/tags/vi/"/>
     
   </entry>
   
   <entry>
     <title>ddd</title>
-    <link href="http://www.example.com/2022/11/02/ddd/"/>
-    <id>http://www.example.com/2022/11/02/ddd/</id>
+    <link href="http://kiddoliu.github.io/2022/11/02/ddd/"/>
+    <id>http://kiddoliu.github.io/2022/11/02/ddd/</id>
     <published>2022-11-02T14:28:47.000Z</published>
     <updated>2022-11-02T14:49:24.901Z</updated>
     
@@ -70,8 +70,8 @@
   
   <entry>
     <title>blog-name</title>
-    <link href="http://www.example.com/2022/11/02/blog-name/"/>
-    <id>http://www.example.com/2022/11/02/blog-name/</id>
+    <link href="http://kiddoliu.github.io/2022/11/02/blog-name/"/>
+    <id>http://kiddoliu.github.io/2022/11/02/blog-name/</id>
     <published>2022-11-02T14:27:00.000Z</published>
     <updated>2022-11-02T14:27:00.776Z</updated>
     
@@ -83,8 +83,8 @@
   
   <entry>
     <title>categories</title>
-    <link href="http://www.example.com/2022/11/02/categories/"/>
-    <id>http://www.example.com/2022/11/02/categories/</id>
+    <link href="http://kiddoliu.github.io/2022/11/02/categories/"/>
+    <id>http://kiddoliu.github.io/2022/11/02/categories/</id>
     <published>2022-11-02T14:11:08.000Z</published>
     <updated>2022-11-02T14:11:08.488Z</updated>
     
@@ -96,8 +96,8 @@
   
   <entry>
     <title>cde</title>
-    <link href="http://www.example.com/2022/11/02/cde/"/>
-    <id>http://www.example.com/2022/11/02/cde/</id>
+    <link href="http://kiddoliu.github.io/2022/11/02/cde/"/>
+    <id>http://kiddoliu.github.io/2022/11/02/cde/</id>
     <published>2022-11-02T11:07:29.000Z</published>
     <updated>2022-11-02T11:24:24.798Z</updated>
     
@@ -116,8 +116,8 @@
   
   <entry>
     <title>abc</title>
-    <link href="http://www.example.com/2022/11/02/abc/"/>
-    <id>http://www.example.com/2022/11/02/abc/</id>
+    <link href="http://kiddoliu.github.io/2022/11/02/abc/"/>
+    <id>http://kiddoliu.github.io/2022/11/02/abc/</id>
     <published>2022-11-02T11:04:01.000Z</published>
     <updated>2022-11-08T14:04:51.254Z</updated>
     
@@ -143,17 +143,17 @@
     
     
     
-    <category term="学习" scheme="http://www.example.com/categories/%E5%AD%A6%E4%B9%A0/"/>
+    <category term="学习" scheme="http://kiddoliu.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
-    <category term="技术" scheme="http://www.example.com/tags/%E6%8A%80%E6%9C%AF/"/>
+    <category term="技术" scheme="http://kiddoliu.github.io/tags/%E6%8A%80%E6%9C%AF/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="http://www.example.com/2022/11/02/hello-world/"/>
-    <id>http://www.example.com/2022/11/02/hello-world/</id>
+    <link href="http://kiddoliu.github.io/2022/11/02/hello-world/"/>
+    <id>http://kiddoliu.github.io/2022/11/02/hello-world/</id>
     <published>2022-11-02T10:51:38.993Z</published>
     <updated>2022-11-02T10:51:38.993Z</updated>
     
