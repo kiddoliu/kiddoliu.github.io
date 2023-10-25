@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://kiddoliu.github.io/2022/12/04/mongodb%E5%9F%BA%E7%A1%80/</loc>
+    <lastmod>2022-12-04</lastmod>
+  </url>
+  <url>
     <loc>http://kiddoliu.github.io/2022/11/26/vim%E6%96%87%E6%9C%AC%E5%AF%B9%E8%B1%A1/</loc>
     <lastmod>2022-11-26</lastmod>
   </url>
