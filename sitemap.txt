@@ -1,3 +1,4 @@
+http://kiddoliu.github.io/2023/12/23/Oracle%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/
 http://kiddoliu.github.io/2022/11/26/vim%E6%96%87%E6%9C%AC%E5%AF%B9%E8%B1%A1/
 http://kiddoliu.github.io/2022/11/02/ddd/
 http://kiddoliu.github.io/2022/12/04/mongodb%E5%9F%BA%E7%A1%80/
@@ -16,4 +17,6 @@ http://kiddoliu.github.io/2022/11/02/hello-world/
 http://kiddoliu.github.io/
 http://kiddoliu.github.io/tags/%E6%8A%80%E6%9C%AF/
 http://kiddoliu.github.io/tags/vi/
+http://kiddoliu.github.io/tags/oracle/
 http://kiddoliu.github.io/categories/%E5%AD%A6%E4%B9%A0/
+http://kiddoliu.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/
