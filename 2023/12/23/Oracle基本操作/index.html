@@ -26,7 +26,7 @@
 <meta property="og:description" content="Oracle基本操作(用户,表空间,备份)      用户 表空间 数据备份恢复      用户#概念# oracle中每一个用户对应一个schama，所有的表都归属在相关的用户下 每个用户都对应着自己的默认表空间，该用户建立的表会存储在对应的默认表空间里。 删除用户意味着删除该用户所有的对象，包括表，索引等  具体操作# 新增用户1create user WHHH identified by W">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-12-23T03:32:00.000Z">
-<meta property="article:modified_time" content="2023-12-23T04:05:06.078Z">
+<meta property="article:modified_time" content="2023-12-23T05:32:42.571Z">
 <meta property="article:author" content="kiddoliu">
 <meta property="article:tag" content="oracle">
 <meta name="twitter:card" content="summary">
@@ -443,6 +443,9 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">alter tablespace 表空间名</span><br><span class="line">add datafile &#x27;存放路径&#x27;</span><br><span class="line">size 大小 autoextend on next 50M maxsize unlimited;</span><br></pre></td></tr></table></figure>
 <p>示例</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">alter tablespace USERS</span><br><span class="line">add datafile &#x27;C:\ORACLE\ORADATA\ORCL\USERS03.DBF&#x27;</span><br><span class="line">size 1024M autoextend on next 50M maxsize unlimited;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>修改表空间名称<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter tablespace adf rename to adf_new</span><br></pre></td></tr></table></figure></li>
+</ul>
 <h3><span id="shu-ju-bei-fen-hui-fu">数据备份恢复</span><a href="#shu-ju-bei-fen-hui-fu" class="header-anchor">#</a></h3><ul>
 <li>exp&#x2F;imp<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exp SONIC/SONIC BUFFER=64000 FILE=C:\SONIC.DMP OWNER=SONIC FULL=Y</span><br></pre></td></tr></table></figure>
 使用用户名 SONIC<br>使用密码 SONIC<br>导出 SONIC<br>的所有对象</li>
