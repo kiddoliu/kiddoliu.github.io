@@ -6,7 +6,7 @@
   <link href="http://kiddoliu.github.io/atom.xml" rel="self"/>
   
   <link href="http://kiddoliu.github.io/"/>
-  <updated>2023-10-26T09:05:32.891Z</updated>
+  <updated>2022-12-04T03:48:46.596Z</updated>
   <id>http://kiddoliu.github.io/</id>
   
   <author>
@@ -15,27 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>dfdfffdf</title>
-    <link href="http://kiddoliu.github.io/2023/10/26/dfdfffdf/"/>
-    <id>http://kiddoliu.github.io/2023/10/26/dfdfffdf/</id>
-    <published>2023-10-26T08:52:32.000Z</published>
-    <updated>2023-10-26T09:05:32.891Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="/2023/10/26/dfdfffdf/ddd.jpg" alt="img"></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;&lt;img src=&quot;/2023/10/26/dfdfffdf/ddd.jpg&quot; alt=&quot;img&quot;&gt;&lt;/p&gt;
-</summary>
-      
-    
-    
-    
-    
-  </entry>
   
   <entry>
     <title>mongodb基础</title>
@@ -68,8 +47,8 @@
     <title>vim文本对象</title>
     <link href="http://kiddoliu.github.io/2022/11/26/vim%E6%96%87%E6%9C%AC%E5%AF%B9%E8%B1%A1/"/>
     <id>http://kiddoliu.github.io/2022/11/26/vim%E6%96%87%E6%9C%AC%E5%AF%B9%E8%B1%A1/</id>
-    <published>2022-11-26T03:09:15.000Z</published>
-    <updated>2022-11-26T04:08:55.762Z</updated>
+    <published>2022-11-26T03:09:00.000Z</published>
+    <updated>2023-10-26T09:15:30.459Z</updated>
     
     <content type="html"><![CDATA[<div class="toc"><!-- toc --><ul><li><a href="#shi-me-shi-vim-de-wen-ben-dui-xiang">什么是vim的文本对象</a></li><li><a href="#wen-ben-dui-xiang-du-bao-gua-na-xie-du-shi-shi-me">文本对象都包括那些，都是什么</a></li></ul><!-- tocstop --></div><h3><span id="shi-me-shi-vim-de-wen-ben-dui-xiang">什么是vim的文本对象</span><a href="#shi-me-shi-vim-de-wen-ben-dui-xiang" class="header-anchor">#</a></h3><p>  vim文本对象就是你要操作的实体，这个实体可以是一个单词，一个段落，一个程序编码的参数，甚至是整个文章。</p><p>例如：w 在vim中代表一个单词，例如 daw d：这里是指delete, a:是指arround, w:这里指单词<br>daw，就是删除当前光标所在字母的单词，a：意思是删除这个单词外加它后边的一个空格<br>This is a big building;<br>如果光标位于big的b上，big[空格]   会被删除<br>后会变成：<br>This is a building;</p><h3><span id="wen-ben-dui-xiang-du-bao-gua-na-xie-du-shi-shi-me">文本对象都包括那些，都是什么</span><a href="#wen-ben-dui-xiang-du-bao-gua-na-xie-du-shi-shi-me" class="header-anchor">#</a></h3><table><thead><tr><th>文本对象</th><th>具体含义</th></tr></thead><tbody><tr><td>w&#x2F;W</td><td>word&#x2F;Word:代表一个单词，小写代表单词的分割是特殊符号，大写单词的分隔符是空格例如：cde#abc abc 这里在小写w开来就是两个w，我们把光标定位到c上写一个【daw】 那么只能删除cde,如果我们想删除cde#abc 的时候就要输入【daW】</td></tr><tr><td>t</td><td>tag:整个标签html标签</td></tr><tr><td>s</td><td>sentence:代表一行</td></tr><tr><td>p</td><td>paragraph 代表一个段落，所谓段落就是有空行间隔就叫做一个段落</td></tr><tr><td>e</td><td>entire 代表文章全部,vim默认是没有的，这里需要安装：textobj-entire插件</td></tr><tr><td>a</td><td>arguments:代表一个方法的参数，这里需要安装 argtextobj 插件</td></tr></tbody></table>]]></content>
     
