@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://kiddoliu.github.io/2024/04/02/Mysql-%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85/</loc>
+    
+    <lastmod>2024-04-02</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://kiddoliu.github.io/2023/12/23/Oracle%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</loc>
     
     <lastmod>2023-12-23</lastmod>
@@ -148,7 +157,7 @@
 
   <url>
     <loc>http://kiddoliu.github.io/</loc>
-    <lastmod>2023-12-23</lastmod>
+    <lastmod>2024-04-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -156,21 +165,28 @@
   
   <url>
     <loc>http://kiddoliu.github.io/tags/%E6%8A%80%E6%9C%AF/</loc>
-    <lastmod>2023-12-23</lastmod>
+    <lastmod>2024-04-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://kiddoliu.github.io/tags/vi/</loc>
-    <lastmod>2023-12-23</lastmod>
+    <lastmod>2024-04-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://kiddoliu.github.io/tags/oracle/</loc>
-    <lastmod>2023-12-23</lastmod>
+    <lastmod>2024-04-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://kiddoliu.github.io/tags/mysql/</loc>
+    <lastmod>2024-04-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -179,14 +195,14 @@
   
   <url>
     <loc>http://kiddoliu.github.io/categories/%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2023-12-23</lastmod>
+    <lastmod>2024-04-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://kiddoliu.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
-    <lastmod>2023-12-23</lastmod>
+    <lastmod>2024-04-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
