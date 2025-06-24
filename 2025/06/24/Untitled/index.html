@@ -17,18 +17,21 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>Archive: 2022/11 | kiddoliu&#39;s blog</title>
-  <meta name="description" content="kiddoliu blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="kiddoliu&#39;s">
-<meta property="og:url" content="http://kiddoliu.github.io/archives/2022/11/index.html">
+  <title>JVM优化 | kiddoliu&#39;s blog</title>
+  <meta name="description" content="jvm优化jvm核心指标jvm.gc.time：每分钟的GC耗时在1s以内，500ms以内尤佳jvm.gc.meantime：每次YGC耗时在100ms以内，50ms以内尤佳jvm.fullgc.count：FGC最多几小时1次，1天不到1次尤佳jvm.fullgc.time：每次FGC耗时在1s以内，500ms以内尤佳JVM优化步骤1 CPU指标 查看占用CPU最多的进程查看占用CPU最多的线程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JVM优化">
+<meta property="og:url" content="http://kiddoliu.github.io/2025/06/24/Untitled/index.html">
 <meta property="og:site_name" content="kiddoliu&#39;s">
-<meta property="og:description" content="kiddoliu blog">
+<meta property="og:description" content="jvm优化jvm核心指标jvm.gc.time：每分钟的GC耗时在1s以内，500ms以内尤佳jvm.gc.meantime：每次YGC耗时在100ms以内，50ms以内尤佳jvm.fullgc.count：FGC最多几小时1次，1天不到1次尤佳jvm.fullgc.time：每次FGC耗时在1s以内，500ms以内尤佳JVM优化步骤1 CPU指标 查看占用CPU最多的进程查看占用CPU最多的线程">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-06-24T11:37:00.000Z">
+<meta property="article:modified_time" content="2025-06-24T11:40:58.352Z">
 <meta property="article:author" content="kiddoliu">
+<meta property="article:tag" content="JVM">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://kiddoliu.github.io/archives/2022/11/index.html">
+  <link rel="canonical" href="http://kiddoliu.github.io/2025/06/24/Untitled/index.html">
   
     <link rel="alternate" href="/atom.xml" title="kiddoliu&#39;s" type="application/atom+xml">
   
@@ -344,108 +347,189 @@
   
   
 <main class="main" role="main">
-  	<article class="content article article-archives article-type-list" itemscope="">
-	    <header class="article-header">
-	      <h1 itemprop="title">Archive: 2022/11</h1>
-	      <p class="text-muted">Total 13 articles</p>
-	    </header>
-	    <div class="article-body">
-	      
+  <div class="content">
+  <article id="post-Untitled" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
   
+    <h1 class="article-title" itemprop="name">
+      JVM优化
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2025/06/24/Untitled/" class="article-date">
+	  <time datetime="2025-06-24T11:37:00.000Z" itemprop="datePublished">2025-06-24</time>
+	</a>
+</span>
+        
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/JVM/" rel="tag">JVM</a>
+  </span>
+
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2025/06/24/Untitled/#comments" class="article-comment-link">Comments</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <p>jvm优化<br>jvm核心指标<br>jvm.gc.time：每分钟的GC耗时在1s以内，500ms以内尤佳<br>jvm.gc.meantime：每次YGC耗时在100ms以内，50ms以内尤佳<br>jvm.fullgc.count：FGC最多几小时1次，1天不到1次尤佳<br>jvm.fullgc.time：每次FGC耗时在1s以内，500ms以内尤佳<br>JVM优化步骤<br>1 CPU指标</p>
+<p>查看占用CPU最多的进程<br>查看占用CPU最多的线程<br>查看线程堆栈快照信息<br>分析代码执行热点<br>查看哪个代码占用CPU执行时间最长<br>查看每个方法占用CPU时间比例<br>&#x2F;&#x2F; 显示系统各个进程的资源使用情况<br>top<br>&#x2F;&#x2F; 查看某个进程中的线程占用情况<br>top -Hp pid<br>&#x2F;&#x2F; 查看当前 Java 进程的线程堆栈信息<br>jstack pid<br>常见的工具：JProfiler、JVM Profiler、Arthas等。</p>
+<p>2 JVM 内存指标</p>
+<p>查看当前 JVM 堆内存参数配置是否合理<br>查看堆中对象的统计信息<br>查看堆存储快照，分析内存的占用情况<br>查看堆各区域的内存增长是否正常<br>查看是哪个区域导致的GC<br>查看GC后能否正常回收到内存<br>&#x2F;&#x2F; 查看当前的 JVM 参数配置<br>ps -ef | grep java<br>&#x2F;&#x2F; 查看 Java 进程的配置信息，包括系统属性和JVM命令行标志<br>jinfo pid<br>&#x2F;&#x2F; 输出 Java 进程当前的 gc 情况<br>jstat -gc pid<br>&#x2F;&#x2F; 输出 Java 堆详细信息<br>jmap -heap pid<br>&#x2F;&#x2F; 显示堆中对象的统计信息<br>jmap -histo:live pid<br>&#x2F;&#x2F; 生成 Java 堆存储快照dump文件<br>jmap -F -dump:format&#x3D;b,file&#x3D;dumpFile.phrof pid<br>常见的工具：Eclipse MAT、JConsole等。</p>
+<p>3 JVM GC指标</p>
+<p>查看每分钟GC时间是否正常<br>查看每分钟YGC次数是否正常<br>查看FGC次数是否正常<br>查看单次FGC时间是否正常<br>查看单次GC各阶段详细耗时，找到耗时严重的阶段<br>查看对象的动态晋升年龄是否正常<br>JVM 的 GC指标一般是从 GC 日志里面查看，默认的 GC 日志可能比较少，我们可以添加以下参数，来丰富我们的GC日志输出，方便我们定位问题。<br>GC日志常用 JVM 参数：</p>
+<p>&#x2F;&#x2F; 打印GC的详细信息<br>-XX:+PrintGCDetails<br>&#x2F;&#x2F; 打印GC的时间戳<br>-XX:+PrintGCDateStamps<br>&#x2F;&#x2F; 在GC前后打印堆信息<br>-XX:+PrintHeapAtGC<br>&#x2F;&#x2F; 打印Survivor区中各个年龄段的对象的分布信息<br>-XX:+PrintTenuringDistribution<br>&#x2F;&#x2F; JVM启动时输出所有参数值，方便查看参数是否被覆盖<br>-XX:+PrintFlagsFinal<br>&#x2F;&#x2F; 打印GC时应用程序的停止时间<br>-XX:+PrintGCApplicationStoppedTime<br>&#x2F;&#x2F; 打印在GC期间处理引用对象的时间（仅在PrintGCDetails时启用）<br>-XX:+PrintReferenceGC<br>确定优化目标<br>定位出系统瓶颈后，在优化前先制定好优化的目标是什么，例如：</p>
+<p>将FGC次数从每小时1次，降低到1天1次<br>将每分钟的GC耗时从3s降低到500ms<br>将每次FGC耗时从5s降低到1s以内</p>
+<p>制订优化方案<br>常见方案</p>
+<p>代码bug：升级修复bug。典型的有：死循环、使用无界队列<br>不合理的JVM参数配置：优化 JVM 参数配置。典型的有：年轻代内存配置过小、堆内存配置过小、元空间配置过小。<br>对比优化前后的指标，统计优化效果<br>持续观察和跟踪优化效果<br>实战：<br>服务环境：ParNew + CMS + JDK8</p>
+<p>问题现象：服务频繁出现FGC</p>
+<p>原因分析：<br>1 首先查看GC日志，发现出现FGC的原因是metaspace空间不够<br>对应GC日志：</p>
+<p>Full GC (Metadata GC Threshold)<br>2 进一步查看日志发现元空间存在内存碎片化现象<br>对应GC日志：</p>
+<p>Metaspace       used 35337K, capacity 56242K, committed 56320K, reserved 1099776K<br>used ：已使用的空间大小<br>capacity：当前已经分配且未释放的空间容量大小<br>committed：当前已经分配的空间大小<br>reserved：预留的空间大小</p>
+<p>元空间的分配以 chunk 为单位，当一个 ClassLoader 被垃圾回收时，所有属于它的空间（chunk）被释放，此时该 chunk 称为 Free Chunk，而 committed chunk 就是 capacity chunk 和 free chunk 之和。</p>
+<p>之所以说内存存在碎片化现象就是根据 used 和 capacity 的数据得来的，上面说了元空间的分配以 chunk 为单位，即使一个 ClassLoader 只加载1个类，也会独占整个 chunk，所以当出现 used 和 capacity 两者之差较大的时候，说明此时存在内存碎片化的情况。<br>元空间主要适用于存放类的相关信息，而存在内存碎片化说明很可能创建了较多的类加载器，同时使用率较低。</p>
+<p>因此，当元空间出现内存碎片化时，我们会着重关注是不是创建了大量的类加载器。</p>
+<p>3 通过 dump 堆存储文件发现存在大量 DelegatingClassLoader<br>通过进一步分析，发现是由于反射导致创建大量 DelegatingClassLoader。其核心原理如下：</p>
+<p>在 JVM 上，最初是通过 JNI 调用来实现方法的反射调用，当 JVM 注意到通过反射经常访问某个方法时，它将生成字节码来执行相同的操作，称为膨胀（inflation）机制。如果使用字节码的方式，则会为该方法生成一个 DelegatingClassLoader，如果存在大量方法经常反射调用，则会导致创建大量 DelegatingClassLoader。</p>
+<p>反射调用频次达到多少才会从 JNI 转字节码？</p>
+<p>默认是15次，可通过参数 -Dsun.reflect.inflationThreshold 进行控制，在小于该次数时会使用 JNI 的方式对方法进行调用，如果调用次数超过该次数就会使用字节码的方式生成方法调用。</p>
+<p>分析结论：反射调用导致创建大量 DelegatingClassLoader，占用了较大的元空间内存，同时存在内存碎片化现象，导致元空间利用率不高，从而较快达到阈值，触发 FGC。</p>
+<p>优化策略：</p>
+<p>1）适当调大 metaspace 的空间大小。</p>
+<p>2）优化不合理的反射调用。例如最常见的属性拷贝工具类 BeanUtils.copyProperties 可以使用 mapstruct 替换。</p>
+<p>总结：<br>1，首先表态如果使用合理的 JVM 参数配置，在大多数情况应该是不需要调优的<br>2，其次说明可能还是存在少量场景需要调优，我们可以对一些 JVM 核心指标配置监控告警，当出现波动时人为介入分析评估<br>3，最后举一个实际的调优例子来加以说明</p>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/kiddoliu" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/kiddoliu" target="_blank"><span class="text-dark">kiddoliu</span><small class="ml-1x">Developer</small></a></h3>
+        <div>个人简介。</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
   
     
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
     
-      
-      
-      <section class="panel panel-default b-no">
-        <div class="panel-heading" role="tab">
-          <h3 class="panel-title">
-            <a data-toggle="collapse" href="#collapse2022" aria-expanded="true">
-              <i class="icon icon-calendar-plus text-active"></i><i class="icon icon-calendar-minus text"></i>
-              2022
-            </a>
-            <!-- <a href="/archives/2022" class="archive-year">2022</a> -->
-          </h3>
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/2025/06/17/lombok%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/" title="lombok使用总结"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>$</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>Maybe you could buy me a cup of coffee.</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="/images/donate/alipayimg.png" alt="Scan Qrcode" title="Scan" />
+              </div>
+              <p class="text-muted mv">Scan this qrcode</p>
+              <p class="text-grey">Open alipay app scan this qrcode, buy me a coffee!</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="/images/donate/wechatpayimg.png" alt="Scan Qrcode" title="Scan" />
+              </div>
+              <p class="text-muted mv">Scan this qrcode</p>
+              <p class="text-grey">Open wechat app scan this qrcode, buy me a coffee!</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> alipay</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> wechat payment</a>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div id="collapse2022" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading2022">
-        <div class="panel-body">
-          <div class="collection">
-    
-    
-<a href="/2022/11/26/vim%E6%96%87%E6%9C%AC%E5%AF%B9%E8%B1%A1/" class="collection-item"   itemprop="url">
-  <time datetime="2022-11-26T03:09:00.000Z" itemprop="datePublished">2022-11-26</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> vim文本对象
-</a>
+      </div>
+    </div>
+  </div>
+</div>
 
 
-  
-    
-    
-    
-<a href="/2022/11/02/ddd/" class="collection-item"   itemprop="url">
-  <time datetime="2022-11-02T14:28:47.000Z" itemprop="datePublished">2022-11-02</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> ddd
-</a>
 
-
-  
-    
-    
-    
-<a href="/2022/11/02/blog-name/" class="collection-item"   itemprop="url">
-  <time datetime="2022-11-02T14:27:00.000Z" itemprop="datePublished">2022-11-02</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> blog-name
-</a>
-
-
-  
-    
-    
-    
-<a href="/2022/11/02/categories/" class="collection-item"   itemprop="url">
-  <time datetime="2022-11-02T14:11:08.000Z" itemprop="datePublished">2022-11-02</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> categories
-</a>
-
-
-  
-    
-    
-    
-<a href="/2022/11/02/cde/" class="collection-item"   itemprop="url">
-  <time datetime="2022-11-02T11:07:29.000Z" itemprop="datePublished">2022-11-02</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> cde
-</a>
-
-
-  
-    
-    
-    
-<a href="/2022/11/02/abc/" class="collection-item"   itemprop="url">
-  <time datetime="2022-11-02T11:04:01.000Z" itemprop="datePublished">2022-11-02</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> abc
-</a>
-
-
-  
-    
-    
-    
-<a href="/2022/11/02/hello-world/" class="collection-item"   itemprop="url">
-  <time datetime="2022-11-02T10:51:38.993Z" itemprop="datePublished">2022-11-02</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> Hello World
-</a>
-
-
-  
-  
-    </div></div></div></section>
-  
-
-	    </div>
-  	</article>
-  	 	
 </main>
 
   <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
@@ -506,6 +590,37 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
 
+
+   
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
 
 
 
